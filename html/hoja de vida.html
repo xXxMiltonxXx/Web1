@@ -1,0 +1,517 @@
+<!-- Soporte con HTML5 -->
+<!DOCTYPE html>
+<!-- la página web esta en español -->
+<html lang="es">
+<head>
+    <!-- Codifica los caracteres más comunes, números básicos e inglés con 8 bits -->
+    <meta charset="UTF-8">
+    <!-- el titulo que se vera en la pestaña del navegador -->
+    <title>hoja de vida</title>
+    <!-- establece el nivel de zoom inicial cuando el navegador carga la página por primera vez -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- estilo de CSS3 -->
+    <style type="text/css">
+        /* estilo del cuerpo del documento  */
+        body {
+            background-color: #eee;
+            font-family: 'Times New Roman', sans-serif; /*tipo de letra por defecto en todo el documento*/
+            overflow: scroll;
+        }
+
+        /* estilo para la la lista no ordena */
+        .navbar ul {
+            list-style-type: none; /*estilo que tien la lista*/
+            margin: 0; 
+            padding: 0;
+            overflow: hidden;
+            position: fixed; /*posicion fija*/
+            top: 0;
+            left: 0;
+            width: 100%; /*ocupa el 100% de espacio*/
+            background-color: black;
+        }
+
+        /* estilo para los elementos de la lista no ordenada de la clase navbar */
+        .navbar ul li {
+            float: left; /*se agregaran a izquierda en ves de arriba hacia abajo*/
+        }
+
+        /* estilo para todos los li que tengan como hijo un a */
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+        }
+
+        /* estilo para cuando se pase por encima el cursor */
+        li:hover {
+            background-color: #333;
+        }
+
+        /* estilo cuando se presione algun li en el navbar */
+        .active {
+            background-color: rgb(7, 138, 231);
+        }
+
+        /* estilo que va a tener la division principal  */
+        .caja1 {
+            display: grid; /*su distribucion de espacio sera por el uso de grillas*/
+            grid-template-rows: [row-1-inicio]auto [row-2-inicio] 75px [row-3-inicio]300px [row-4-fin];
+            grid-template-columns: [col-1-inicio] minmax(100px, 25%) [col-2-inicio] minmax(200px, 25%) [col-3-inicio]minmax(200px, 25%) [col-4-inicio]minmax(100px, 1fr) [col-5-fin];
+            grid-gap: 3px 0px; /*brechas*/
+            grid-row: 1/2;
+            margin: 40px 0px 0px 0px;
+            padding: 0;
+            text-align: center;
+            overflow: hidden;
+            left: 0;
+            width: 100%;
+            background: url("Banner.jpg") no-repeat left top scroll; /*imagen que tiene de fondo*/
+            background-size: cover;
+        }
+
+        /* estilo asignado al h1 con clase titulo1 */
+        .titulo1 {
+            grid-column: col-1-inicio/col-5-fin;
+            text-shadow: 2px 1px 1.5px rgb(152, 158, 152);
+            letter-spacing: 1.5px;
+            color: white;
+        }
+
+        /* estilo que tiene el h2 con la clase nombre */
+        .nombre {
+            grid-column: col-1-inicio/col-5-fin;
+            color: white;
+        }
+
+        /* estilo de la division donde contiene una imagen  */
+        .banner1 {
+            display: grid;
+            width: 100%;
+            overflow: visible; /*se mostrara asi se salga del espacio asignado */
+            grid-gap: 3px;
+            grid-template-rows: [rowba-1-inicio] minmax(200px, 100%) [row-2-fin];
+            grid-template-columns: [colba-1-inicio] minmax(200px, 100%) [colba-2-fin];
+            grid-column: col-3-inicio/col-5-fin;
+            justify-items: right;
+            align-items: center;
+        }
+
+        /* estilo que tiene la foto con id foto que esta dentro de la clase banner1 */
+        #foto {
+            width: 350px;
+            height: 450px;
+            border: solid;
+            border-radius: 10px;
+            border: 0px;
+            align-self: center;
+        }
+        /* estilo que tiene el parrafo con clase intro */
+        .intro {
+            text-align: center;
+            grid-row: row-3-inicio/row-4-fin; /*en que filas se posicionara el elemento*/
+            grid-column: col-1-inicio/col-3-inicio;/*en que columnas se posicionara el elemento*/
+            color: white;
+            left: 5px;
+            align-self: center;
+        }
+
+        /* estilo que tien los span para el cambio de color de la letra */
+        .colorSpan1 {
+            color: #d2691e;
+        }
+
+        .colorSpan2 {
+            color: #3AE0C0;
+        }
+
+        .colorSpan3 {
+            color: rgb(199, 69, 219);
+        }
+
+        .datos {
+            display: grid;
+            width: 100%;
+            grid-gap: 3px;
+            grid-template-rows: repeat(10, [rowda-inicio] minmax(50px, auto) [rowda-fin]);
+            grid-template-columns: repeat(6, [colda-inicio] minmax(50px, 1fr) [colda-fin]);
+            grid-column: col-1-inicio/col-5-fin;
+            background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);
+        }
+        /* estilo de la caja que contendra los datos personales de usuario */
+        .dPersonales {
+            display: grid;
+            width: 100%;
+            overflow: hidden;
+            grid-gap: 3px 10px;
+            grid-template-rows: [rowpe-inicio-1] 100px [rowpe-fin];
+            grid-template-columns: [colpe-1-inicio] minmax(200px, 1fr) [colpe-2-fin];
+            grid-row: rowda-inicio 2/rowda-fin 2;
+            grid-column: colda-inicio 3/colda-fin 4;
+            justify-items: center;
+            align-items: center;
+            color: rgb(182, 181, 181);
+            border-radius: 25px;
+            background-color: #d2691e;
+            box-shadow: -12px 11px 4px 0px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: -12px 11px 4px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: -12px 11px 4px 0px rgba(0, 0, 0, 0.75);
+        }
+        /* estilo que tendran todos los parrafos por defecto */
+        p {
+            text-align: justify;
+            font-size: 1.2em;
+        }
+
+        .dERealizados {
+            display: grid;
+            width: 100%;
+            overflow: hidden;
+            grid-gap: 3px 5px;
+            grid-template-rows: [rowder-1-inicio] 100px [rowder-2-inicio] minmax(100px, auto) [rowder-3-inicio] minmax(100px, auto) [rowder-4-fin];
+            grid-template-columns: [colder-1-inicio] minmax(200px, 1fr) [colder-2-inicio] minmax(200px, 1fr) [colder-3-fin];
+            grid-row: rowda-inicio 4/rowda-fin 4;
+            grid-column: colda-inicio 2/colda-fin 5;
+        }
+
+        .titulo2 {
+            grid-column: colder-1-inicio/colder-3-fin;
+            text-shadow: 2px 1px 1.5px rgb(152, 158, 152);
+            letter-spacing: 1.5px;
+        }
+        /* estilo que tendran todas las fotos que contengan la clase .foto */
+        .foto {
+            background: url("eRealizados.jpg") no-repeat left top;
+            background-size: cover; /*cubrira el fondo de forma nas natural y se redimencinara*/
+            overflow: hidden;
+            border-radius: 30px;
+            grid-row: rowder-2-inicio/rowder-4-fin;
+            grid-column: colder-1-inicio/colder-2-inicio;
+        }
+
+        .dERealizados1 {
+            display: grid;
+            width: 100%;
+            overflow: hidden;
+            text-align: justify;
+            grid-gap: 3px 15px;
+            grid-row: rowder-2-inicio/rowder-4-fin;
+            grid-column: colder-2-inicio/colder-3-fin;
+        }
+
+        /* estilo que tendran por defecto los h3  */
+        h3 {
+            padding-left: 10px;
+        }
+
+        /* estilo que tendran por defecto los a que esten dentro de un h3  */
+        h3 a {
+            transition: 1s;
+            text-decoration: none;
+            color: black;
+
+        }
+
+        /* estilo que tendra cuando se pase el cursor por encima */
+        h3 a:hover {
+            letter-spacing: 0.2em;
+            color: #fff;
+            background-image: linear-gradient(45deg, #d1b009 0%, #ec6512 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            color: #fff;
+        }
+
+        .dELaboral {
+            display: grid;
+            width: 100%;
+            overflow: hidden;
+            background-color: #343434;
+            border-radius: 15px;
+            grid-gap: 3px 20px;
+            grid-template-rows: [rowdel-1-inicio] 100px [rowdel-2-inicio] minmax(130px, auto) [rowdel-3-inicio] minmax(90px, auto) [rowdel-4-inicio] minmax(100px, auto) [rowdel-5-fin];
+            grid-template-columns: repeat(4, [coldel-inicio] minmax(23.8%, 1fr) [coldel-fin]);
+            ;
+            grid-row: rowda-inicio 6/rowda-fin 6;
+            grid-column: colda-inicio 1/colda-fin 6;
+        }
+
+        .titulo3 {
+            grid-column: coldel-inicio 1/coldel-fin 7;
+            text-shadow: 2px 1px 1.5px rgb(87, 95, 87);
+            letter-spacing: 1.5px;
+            color: white;
+        }
+
+        #img1 {
+            background: url("imgMaquetado.jpg") no-repeat left top;
+            background-size: cover;
+            margin: 5px;
+            overflow: hidden;
+            border-radius: 10px;
+            grid-row: rowdel-2-inicio /rowdel-3-inicio;
+            grid-column: coldel-inicio 1/coldel-fin 1;
+        }
+
+        #pE1 {
+            grid-row: rowdel-3-inicio /rowdel-4-inicio;
+            grid-column: coldel-inicio 1/coldel-fin 1;
+        }
+
+        #img2 {
+            background: url("imgModelado.jpg") no-repeat left top;
+            background-size: cover;
+            margin: 5px;
+            overflow: hidden;
+            border-radius: 10px;
+            grid-row: rowdel-2-inicio /rowdel-3-inicio;
+            grid-column: coldel-inicio 2/coldel-fin 2;
+        }
+
+        #pE2 {
+            grid-row: rowdel-3-inicio /rowdel-4-inicio;
+            grid-column: coldel-inicio 2/coldel-fin 2;
+        }
+
+        #img3 {
+            background: url("Backend.webp") no-repeat left top;
+            background-size: cover;
+            margin: 5px;
+            overflow: hidden;
+            border-radius: 10px;
+            grid-row: rowdel-2-inicio /rowdel-3-inicio;
+            grid-column: coldel-inicio 3/coldel-fin 3;
+        }
+
+        #pE3 {
+            grid-row: rowdel-3-inicio /rowdel-4-inicio;
+            grid-column: coldel-inicio 3/coldel-fin 3;
+        }
+
+        #img4 {
+            background: url("imgGameDev.webp") no-repeat left top;
+            background-size: cover;
+            margin: 5px;
+            overflow: hidden;
+            border-radius: 10px;
+            grid-row: rowdel-2-inicio /rowdel-3-inicio;
+            grid-column: coldel-inicio 4/coldel-fin 4;
+        }
+
+        #pE4 {
+            grid-row: rowdel-3-inicio /rowdel-4-inicio;
+            grid-column: coldel-inicio 4/coldel-fin 4;
+        }
+
+        .parrafoELab {
+            color: white;
+            margin: 7px;
+            text-align: center;
+            align-self: center;
+        }
+
+        .dCap {
+            display: grid;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 15px;
+            grid-gap: 3px 20px;
+            grid-template-rows: [rowcap-1-inicio] 100px [rowcap-2-inicio] minmax(100px, auto) [rowcap-3-inicio] minmax(100px, auto) [rowdel-4-inicio] minmax(100px, auto) [rowdel-5-fin];
+            grid-template-columns: [coldel-inicio] minmax(20%, 1fr) [coldel-fin];
+            grid-row: rowda-inicio 8/rowda-fin 8;
+            grid-column: colda-inicio 1/colda-fin 2;
+
+        }
+
+        /* estilo que contiene los divque estan dentro de el elemento que contiene la clase dCap */
+        .dCap div {
+            background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+            color: white;
+        }
+
+        .pCap {
+            padding-top: 5%;
+            text-align: center;
+            text-shadow: 2px 1px 1.5px rgb(152, 158, 152);
+        }
+
+        /* estilo de la division que contiene los datos de referencias personales  */
+        .dRef {
+            display: grid;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 15px;
+            grid-template-rows: [rowdref-1-inicio] 50px [rowdref-2-fin] ;
+            grid-gap: 3px 20px;
+            grid-row: rowda-inicio 8/rowda-fin 8;
+            grid-column: colda-inicio 3/colda-fin 6;
+        }
+
+        /* estilo de la tabla */
+        .content-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1em;
+            font-family: sans-serif;
+            min-width: 450px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-table thead tr {
+            background-color: #980081;
+            color: #ffffff;
+            text-align: middle;
+        }
+
+        .content th,
+        .content td {
+            padding: 12px 15px;
+        }
+
+        .content-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .content-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+    </style>
+</head>
+<!-- cuerpo del documento -->
+<body>
+    <!-- division para la barra de navegacion -->
+    <div class="navbar">
+        <!-- lista no ordenada -->
+        <ul>
+            <!-- datos de la lista -->
+            <li class="active"><a href="hoja de vida.html">Hoja de vida</a></li>
+            <li><a href="#">Proyectos</a></li>
+        </ul>
+    </div>
+    <!-- division de la caja principal -->
+    <div class="caja1">
+        <!-- titulo principal de la presentacion -->
+        <h1 class="titulo1">HOJA DE VIDA</h1>
+        <!-- titulo secundario de la presentacion-->
+        <h2 class="nombre">HOLA! SOY <span class="colorSpan1">MILTON</span> ANGAMARCA</h2>
+        <div class="banner1">
+            <!-- foto del usuario -->
+            <img id="foto" src="a1.png" alt="foto usuario" />
+        </div>
+        <!-- breve descripcion de las habilidades -->
+        <p class="intro">Soy desarrollador de softwared de nivel junior
+            con experiencia en <span class="colorSpan2">D</span>esarrollo <span class="colorSpan2">W</span>eb, <span
+                class="colorSpan3">V</span>ideo<span class="colorSpan3">J</span>uegos, <span
+                class="colorSpan1">M</span>anejo de <span class="colorSpan1">S</span>ervidores y actualmente
+            estudiando la carrera de <span class="colorSpan1">TECNOLOGÍAS DE LA INFORMACIÓN</span> en la Uleam
+        </p>
+        <!-- caja principal para almacenar los datos (la que estructura) -->
+        <div class="datos">
+            <!-- caja con los datos presonales del usuario -->
+            <div class="dPersonales">
+                <h1> Sobre Mi</h1>
+                <p><b>Nombre: </b>Milton Angamarca</p>
+                <p><b>Lugar de nacimiento: </b>Santo Domingo</p>
+                <p><b>Cedula: </b>2300810534</p>
+                <p><b>Sexo: </b>Masculino</p>
+                <p><b>Estado Civil: </b>Soltero</p>
+                <p><b>Dirección: </b>Calle C.M-Montecristi</p>
+                <p><b>Telefono: </b>0994494393</p>
+            </div>
+            <!-- caja con los principales estudios realizados por el usuario -->
+            <div class="dERealizados">
+                <h1 class="titulo2">Estudios Realizados</h1>
+                <div class="foto">
+                </div>
+                <!-- caja con los enlaces respectivos -->
+                <div class="dERealizados1">
+                    <h3><a href="https://www.udemy.com/course/aprende-javascript-es9-html-css3-y-nodejs-desde-cero/">Curso
+                            de Javascript ES9, HTML, CSS3 y NodeJS</a></h3>
+                    <h3><a
+                            href="https://www.udemy.com/course/como-implementar-scrum-y-xp-en-tu-empresa-o-proyecto/learn/lecture/12919194?start=0#overview">Curso
+                            de Scrum y XP</a></h3>
+                    <h3><a href="https://www.udemy.com/course/python-sin-fronteras-html-css-mysql/">Curso Python sin
+                            fronteras</a></h3>
+                    <h3><a
+                            href="https://www.udemy.com/course/blender-27x-modelado-y-texturizado-enfocado-a-videojuegos/">Curso
+                            modelado y texturizado Blender 3.x</a></h3>
+                    <h3><a href="https://www.udemy.com/course/crea-fps-multiplayer-photon-pun2/">Curso Unity y Photon
+                            PUN2</a></h3>
+                </div>
+            </div>
+
+            <!-- division que contiene los datos de la experiencia laboral -->
+            <div class="dELaboral">
+                <h1 class="titulo3"> Experiencia Laboral</h1>
+                <div id="img1"></div>
+                <div id="img2"></div>
+                <div id="img3"></div>
+                <div id="img4"></div>
+                <p class="parrafoELab" id="pE1">Maquetado de aplicación web para la venta de camisetas</p>
+                <p class="parrafoELab" id="pE2">Modelado 3d de personajes de Varolant para impresion 3D</p>
+                <p class="parrafoELab" id="pE3">Junior/Backend Developer en Magic Donuts</p>
+                <p class="parrafoELab" id="pE4">Fullstack Unity/C# mobile</p>
+            </div>
+            caja que contiene los datos de las principales capacitaciones realizadas por el usuario
+            <div class="dCap">
+                <div>
+                    <h1> Capacitaciones</h1>
+                </div>
+                <div>
+                    <p class="pCap">Buenas practicas al escribir código</p>
+                </div>
+                <div>
+                    <p class="pCap">Clean coder resumen</p>
+                </div>
+                <div>
+                    <p class="pCap">Mejorar productividad Windows</p>
+                </div>
+
+            </div>
+            <!-- caja que contiene los datos de las referecias personales -->
+            <div class="dRef">
+                <h1>Referecias Personales</h1>
+                <!-- tabla que estructura los datos de las referencias personales -->
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cargo Profesional</th>
+                            <th>Teléfono</th>
+                            <th>Correo Electrónico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Wilson Cisneros</td>
+                            <td>Jefe General</td>
+                            <td>0939418502</td>
+                            <td>contacto@ingenioonline.com</td>
+                        </tr>
+                        <td>Andres Caicedo</td>
+                        <td>Director Creativo</td>
+                        <td>0960907032</td>
+                        <td>WolpexStudio@wolpex.com</td>
+                        </tr>
+                        <tr>
+                            <td>Andrea Gallego</td>
+                            <td>Docente</td>
+                            <td>+57960810747</td>
+                            <td>andreaa.ga23@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
