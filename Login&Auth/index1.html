@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de funciones</title>
+    <meta charset="UTF-8">
+    <style>
+        /* Estilos para el título */
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Estilos para los labels de los inputs */
+        label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        /* Estilos para los inputs */
+        input {
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        /* Estilos para el botón */
+        button {
+            display: block;
+            margin-top: 1rem;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+
+        /* Estilos para los párrafos de resultado */
+        p {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejemplo de funciones</h1>
+
+    <label for="base">Ingresa la base del triángulo:</label>
+    <input type="number" id="base">
+
+    <label for="altura">Ingresa la altura del triángulo:</label>
+    <input type="number" id="altura">
+
+    <label for="numero">Ingresa un número impar:</label>
+    <input type="number" id="numero">
+
+    <label for="texto">Ingresa una cadena de texto:</label>
+    <input type="text" id="texto">
+
+    <button onclick="ejecutarFunciones()">Ejecutar funciones</button>
+
+    <p id="segundos"></p>
+    <p id="triangulo"></p>
+    <p id="raiz"></p>
+    <p id="longitud"></p>
+
+    <script>
+        // Función para transformar la hora actual en segundos
+        function horaActualEnSegundos() {
+            var fecha = new Date();
+            var segundos = fecha.getSeconds() + (60 * fecha.getMinutes()) + (3600 * fecha.getHours());
+            return segundos;
+        }
+
+        // Función para calcular el área de un triángulo
+        function areaTriangulo(base, altura) {
+            var area = (base * altura) / 2;
+            return area;
+        }
+
+        // Función para calcular la raíz cuadrada de un número impar
+        function raizCuadrada(num) {
+            if (num % 2 === 0) {
+                return "El número debe ser impar";
+            } else {
+                var raiz = Math.sqrt(num);
+                return raiz.toFixed(3);
+            }
+        }
+
+        // Función para mostrar la longitud de una cadena de texto
+        function longitudCadena(texto) {
+            var longitud = texto.length;
+            return longitud;
+        }
+
+        // Función que se ejecuta al hacer clic en el botón "Ejecutar funciones"
+        function ejecutarFunciones() {
+            var base = parseInt(document.getElementById("base").value);
+            var altura = parseInt(document.getElementById("altura").value);
+            var numero = parseInt(document.getElementById("numero").value);
+            var texto = document.getElementById("texto").value;
+            // Ejecutamos las funciones y mostramos los resultados
+            document.getElementById("segundos").innerHTML = "La hora actual en segundos es: " + horaActualEnSegundos();
+            document.getElementById("triangulo").innerHTML = "El área del triángulo es: " + areaTriangulo(base, altura);
+            document.getElementById("raiz").innerHTML = "La raíz cuadrada del número es: " + raizCuadrada(numero);
+            document.getElementById("longitud").innerHTML = "La longitud de la cadena de texto es: " + longitudCadena(texto);
+        }
+    </script>
+</body>
+
+</html>
+```
