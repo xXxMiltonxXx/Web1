@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content">
+        <h1>Calculadora</h1>
+        <div class="form-container">
+            <label for="num1">Número 1:</label>
+            <input type="number" id="num1" name="num1">
+            <label for="num2">Número 2:</label>
+            <input type="number" id="num2" name="num2">
+            <button onclick="calcular()">Calcular</button>
+        </div>
+        <div class="resultado-container">
+            <h2>Resultados</h2>
+            <div id="resultado"></div>
+        </div>
+    </div>
+    <script src="operaciones.js"></script>
+</body>
+
+</html>
