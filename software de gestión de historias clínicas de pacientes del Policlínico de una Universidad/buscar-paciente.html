@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Historia clínica</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+
+<body>
+    <header>
+        <h1>Historia clínica</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="buscar-paciente.html">Buscar paciente</a></li>
+                <li><a href="crear-historia.html">Crear historia clínica</a></li>
+                <li><a href="ver-historias.html">Ver historias clínicas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Buscar pacientes</h2>
+            <form id="formulario">
+                <label for="input-buscar">Buscar por nombre o apellido:</label>
+                <input type="text" id="input-buscar">
+                <button type="submit">Buscar</button>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Edad</th>
+                        <th>Enfermedades</th>
+                        <th>Médico tratante</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-pacientes">
+                    <tr>
+                        <td class="nombre">María</td>
+                        <td class="apellido">González</td>
+                        <td>30</td>
+                        <td>Anemia</td>
+                        <td>Dr. Pérez</td>
+                    </tr>
+                    <tr>
+                        <td class="nombre">Juan</td>
+                        <td class="apellido">López</td>
+                        <td>45</td>
+                        <td>Diabetes</td>
+                        <td>Dr. Gómez</td>
+                    </tr>
+                    <tr>
+                        <td class="nombre">Carlos</td>
+                        <td class="apellido">García</td>
+                        <td>25</td>
+                        <td>Asma</td>
+                        <td>Dr. Pérez</td>
+                    </tr>
+                    <tr>
+                        <td class="nombre">Ana</td>
+                        <td class="apellido">Martínez</td>
+                        <td>55</td>
+                        <td>Artritis</td>
+                        <td>Dr. Gómez</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+
+</html>

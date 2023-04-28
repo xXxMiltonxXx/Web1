@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de usuarios</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <form>
+        <h2>Registro de usuarios</h2>
+        <input type="text" id="nombre" placeholder="Nombre completo">
+        <div class="error" id="nombre-error">El nombre es obligatorio</div>
+        <input type="email" id="email" placeholder="Correo electrónico">
+        <div class="error" id="email-error">El correo electrónico es obligatorio y debe ser válido</div>
+        <input type="password" id="contrasena" placeholder="Contraseña">
+        <div class="error" id="contrasena-error">La contraseña es obligatoria y debe tener al menos 6 caracteres</div>
+        <button type="submit" id="registrar">Registrarse</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Historia clínica</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+	<header>
+		<h1>Historia clínica</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="buscar-paciente.html">Buscar paciente</a></li>
+				<li><a href="crear-historia.html">Crear historia clínica</a></li>
+				<li><a href="ver-historias.html">Ver historias clínicas</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h2>Crear historia clínica</h2>
+		<form>
+			<label for="cedula">Cédula del paciente:</label>
+			<input type="text" id="cedula" name="cedula" required>
+
+			<label for="nombre">Nombre del paciente:</label>
+			<input type="text" id="nombre" name="nombre" required>
+
+			<label for="fecha">Fecha de la historia clínica:</label>
+			<input type="date" id="fecha" name="fecha" required>
+
+			<label for="motivo">Motivo de la consulta:</label>
+			<textarea id="motivo" name="motivo" rows="4" required></textarea>
+
+			<label for="diagnostico">Diagnóstico:</label>
+			<textarea id="diagnostico" name="diagnostico" rows="4" required></textarea>
+
+			<label for="tratamiento">Tratamiento:</label>
+			<textarea id="tratamiento" name="tratamiento" rows="4" required></textarea>
+
+			<button type="submit">Guardar historia clínica</button>
+		</form>
+	</main>
+	<script src="scripts3.js"></script>
+</body>
+</html>

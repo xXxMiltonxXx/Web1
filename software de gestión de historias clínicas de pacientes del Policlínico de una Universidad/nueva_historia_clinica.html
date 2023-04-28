@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Nueva historia clínica</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<form>
+		<h2>Nueva historia clínica</h2>
+		<label for="paciente">Paciente:</label>
+		<input type="text" id="paciente" placeholder="Nombre completo del paciente">
+		<div class="error" id="paciente-error">El nombre del paciente es obligatorio</div>
+		<label for="fecha">Fecha de ingreso:</label>
+		<input type="date" id="fecha" placeholder="Fecha de ingreso">
+		<div class="error" id="fecha-error">La fecha de ingreso es obligatoria</div>
+		<label for="diagnostico">Diagnóstico:</label>
+		<textarea id="diagnostico" placeholder="Diagnóstico del paciente"></textarea>
+		<div class="error" id="diagnostico-error">El diagnóstico es obligatorio</div>
+		<button type="submit" id="agregar-historia">Agregar historia clínica</button>
+	</form>
+	<script src="script2.js"></script>
+</body>
+</html>
