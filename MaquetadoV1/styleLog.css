@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+/* selector universal */
+/* reinicio */
+/* se deshace todas las preconfiguraciones */
+*, *::before, *::after{
+    /* margen y relleno en 0 */
+    padding: 0;
+    margin: 0;
+    /* cambio de tamaño al tamano de la caja */
+    box-sizing: border-box;
+}
+
+body, input{
+    font-family: "Poppins", sans-serif ;
+}
+
+/* estilo de la etiqueta main */
+main{
+    /* ancho al 100% */
+    width: 100%;
+    /* altura minima del dispositivo*/
+    /* es quivalente a usar % */
+    min-height: 100vh;
+    /* desvoradamiento */
+    overflow: hidden;
+    /* color del fondo */
+    background-color: #BE87FE;
+    /* relleno */
+    padding: 2rem;
+    /* se mostrara como flex */
+    display: flex;
+    /* alineacion vertical en el centro */
+    align-items: center;
+    /* alineacion horizontal en el centro */
+    justify-content: center;
+}
+
+/* estilo de la caja */
+.caja{
+    /* posicion relativa */
+    position: relative;
+    /* ancho 100% */
+    width: 100%;
+    /* establecer el ancho maximo */
+    max-width: 940px;
+    /* altura  */
+    height: 720px;
+    /* color de fondo */
+    background-color: #eee;
+    /* bordes redondeados */
+    border-radius: 3.3rem;
+    /* sombreado transparente */
+    box-shadow: 0 62px 40px -30px rgba(0, 0, 0, 0.27);
+}
+
+/* estilo de la caja interna */
+.caja-interna{
+    display: grid;
+    /* posicion del objeto */
+    position: absolute;
+    /* calcular un ancho y alto */
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+    top: 50%;
+    left: 50%;
+    /* calculo para que quede centrado  */
+    transform: translate(-50%, -50%);
+}
+
+/* estilo para la envoltura del formulario */
+.envoltura-formulario{
+    /* posicion absoluta */
+    position: absolute;
+    /* atura del 100% */
+    height: 100%;
+    /* ancho del 45% */
+    width: 45%;
+    top:0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    /* transision del slide */
+    transition: 0.8s ease-in-out;
+}
+/* estilo del formulario */
+form{
+    max-width: 280px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    transition: opacity 0.02s 0.4s;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 60px;
+    margin-right: 0.3rem;
+}
+
+.logo h4{
+    font-size: 1.1rem;
+    margin-top: -9px;
+    letter-spacing: -0.5px;
+    color: #151111;
+}
+
+.titulo h2{
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: #151111;
+}
+
+.titulo h6{
+    color:#9E9E9E ;
+    font-size: 0.70rem;
+    font-weight: 400;
+    display: inline;
+}
+
+.palanca{
+    font-size: 0.70rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #151111;
+    transition: 0.4s;
+}
+
+.palanca:hover{
+    color: #B3B13B;
+}
+
+.envoltura-entradas{
+    position: relative;
+    height: 37px;
+    margin-bottom: 2rem;
+}
+
+.campo-entrada{
+    position: absolute;
+    font-size: 0.95rem;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #bbb;
+    color: #151111;
+    transition: 0.4s;
+}
+
+label{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    font-size: 0.95rem;
+    color: #9E9E9E;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.4s;
+}
+
+.campo-entrada.active{
+    border-bottom-color: #151111;
+}
+
+.campo-entrada.active + label{
+    font-size: 0.75;
+    top:-2px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.iniciar-btn{
+    display: inline-block;
+    width: 100%;
+    height: 43px;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    background-color: #151111;
+    color: #eee;
+    border: none;
+    border-radius: 0.9rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.iniciar-btn:hover{
+    background-color:#FFFE87 ;
+    color: #151111;
+}
+
+.texto{
+    color: #9E9E9E;
+    font-size: 0.7rem;
+}
+
+.texto a{
+    color: #9E9E9E;
+    transition: 0.4s;
+}
+
+.texto a:hover{
+    color: #B3B13B;
+}
+
+
+/* estilo del carrusel */
+.carrusel{
+    position: absolute;
+    height: 100%;
+    width: 55%;
+    /* va al lado del formulario */
+    left: 45%; 
+    top: 0;
+    padding-bottom: 2rem;
+    background-color: #E8D4FF;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    /* transision del slide */
+    transition: 0.8s ease-in-out;
+}
+.envoltura-imagenes{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.imagen{
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.5s;
+}
+.img-1{
+    min-height: 600px;
+    border-top-right-radius: 2rem;
+    border-start-start-radius: 2rem;
+    transform: translate(0, -50px);
+}
+.img-2{
+    min-height: 600px;
+    transform: scale(0.4 0.5);
+}
+.img-3{
+    max-height: 600px;
+    transform: scale(0.3) rotate(-20deg);
+}
+
+.imagen.show{
+    opacity: 1;
+    transform: none;
+}
+
+.texto-slider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+}
+
+.envoltura-texto{
+    max-height: 2.2rem;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+}
+
+.grupo-texto{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transform: translateY(0);
+    transition: 0.5s;
+}
+
+.grupo-texto h2{
+    line-height: 2.2rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.balas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.balas span{
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 0 0.25rem;
+    background-color: #9E9E9E;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.balas span.active{
+    width: 1.1rem;
+    background-color: #151111;
+    border-radius: 1rem;
+}

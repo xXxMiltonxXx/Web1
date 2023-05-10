@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- referencia a en que idioma esta  -->
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"/>
+        <!-- compatibilidd -->
+        <meta http-equiv="X-UA-Comaptible" content="IE=edge" />
+        <!-- tamaño inicial -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>login</title>
+        <link rel="stylesheet" href="styleLog.css" type="text/css">
+    </head>
+    <body>
+        <!--contenido principal de body -->
+        <main>
+            <!-- caja principal  -->
+            <div class="caja">
+                <!-- caja que sentra los datos dentro de la caja principal  -->
+                <div class="caja-interna">
+                    <!--caja que contiene los formularios -->
+                    <div class="envoltura-formulario">
+                        <!-- formularios -->
+                        <!-- formulario de login -->
+                        <form action="#" autocomplete="off" class="login-form">
+                            <div class="logo">
+                                <img src="./img/logo.png" alt="logotipo">
+                                <h4>Policlinico Uleam</h4>
+                            </div>
+                            <div class="titulo">
+                                <h2>Bienvenido de vuelta!</h2>
+                                <h6>Aun no te haz registrado?</h6>
+                                <a href="RegisterForm.html" class="palanca">Registrate</a>
+                            </div>
+                            <div class="actual-formulario">
+                                <div class="envoltura-entradas">
+                                    <input 
+                                        type="text"
+                                        class="campo-entrada"
+                                        autocomplete="off"
+                                        id="email"
+                                    />
+                                    <label for="email">Correo electrónico</label> 
+                                </div>
+                                <div class="error" id="email-error">El correo electrónico es obligatorio y debe ser válido</div>
+                                <div class="envoltura-entradas">
+                                    <input 
+                                        type="password"
+                                        class="campo-entrada"
+                                        autocomplete="off"
+                                        id="contrasena"
+                                    />
+                                    <label for="contrasena">Contraseña</label> 
+                                </div>
+                                <div class="error" id="contrasena-error">La contraseña debe tener al menos 8 caracteres, contener al menos una letra minúscula, una letra mayúscula, un número y un carácter especial</div>
+                                <input 
+                                    type="submit"
+                                    value="Iniciar Sesion"
+                                    class="iniciar-btn"
+                                />
+                                <p class="texto">
+                                    No recuerdas tu Usuario o Contraseña?
+                                    <a href="#"> Obtener Ayuda</a> para Iniciar Sesion
+                                </p>
+                                
+                            </div>
+                        </form> 
+                </div>
+                <!-- caja que contiene el carrusel de imagenes -->
+                <div class="carrusel">
+                    <!-- caja que contiene las imagenes  -->
+                    <div class="envoltura-imagenes">
+                        <img src="./img/img1.jpg"class="imagen img-1 show" alt="" >
+                        <img src="./img/img2.jpg"class="imagen img-2" alt="" >
+                        <img src="./img/logo.png"class="imagen img-3" alt="" >
+                    </div>
+                    <!-- caja que contiene a los textos del carrusel -->
+                    <div class="texto-slider">
+                        <div class="envoltura-texto">
+                            <div class="grupo-texto">
+                                <h2>Policlinico Uleam</h2>
+                                <h2>lalalala</h2>
+                                <h2>alalla XD</h2>
+                            </div>
+                        </div>
+                        <!-- caja que contiene los botones que dan el cambio al carrusel -->
+                        <div class="balas">
+                            <span class="active" data-value="1"></span>
+                            <span data-value="2"></span>
+                            <span data-value="3"></span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+    </body>
+    <!-- Incrustacion de JavaScript -->
+    <script src="Login.js"></script>
+</html>

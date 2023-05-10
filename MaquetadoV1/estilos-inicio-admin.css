@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+
+/* selector universal */
+/* reinicio */
+/* se deshace todas las preconfiguraciones */
+*,
+*::before,
+*::after {
+    /* margen y relleno en 0 */
+    padding: 0;
+    margin: 0;
+    /* cambio de tamaño al tamano de la caja */
+    box-sizing: border-box;
+}
+
+body,
+input {
+    font-family: "Poppins", sans-serif;
+}
+
+/* estilo de la etiqueta main */
+main {
+    /* ancho al 100% */
+    width: 100%;
+    /* altura minima del dispositivo*/
+    /* es quivalente a usar % */
+    min-height: 100vh;
+    /* desvoradamiento */
+    overflow: hidden;
+    /* color del fondo */
+    background-color: #39A6FE;
+    /* relleno */
+    padding: 2rem;
+    /* se mostrara como flex */
+    display: flex;
+    /* alineacion vertical en el centro */
+    align-items: center;
+    /* alineacion horizontal en el centro */
+    justify-content: center;
+}
+
+/* estilo de la caja */
+.caja {
+    /* posicion relativa */
+    position: relative;
+    /* ancho 100% */
+    width: 100%;
+    /* establecer el ancho maximo */
+    max-width: 940px;
+    /* altura  */
+    height: 720px;
+    /* color de fondo */
+    background-color: #eee;
+    /* bordes redondeados */
+    border-radius: 3.3rem;
+    /* sombreado transparente */
+    box-shadow: 0 62px 40px -30px rgba(0, 0, 0, 0.27);
+}
+
+/* estilo de la caja interna */
+.caja-interna {
+    display: grid;
+    /* posicion del objeto */
+    position: absolute;
+    /* calcular un ancho y alto */
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+    top: 50%;
+    left: 50%;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    /* calculo para que quede centrado  */
+    transform: translate(-50%, -50%);
+}
+
+#titulo-1 {
+    grid-column: 1/5;
+    grid-row: 1/2;
+}
+
+.datos-esenciales {
+    color: #707070;
+}
+
+.Crear-Med {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 43px;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    background-color: #ED7EFF;
+    color: #eee;
+    border: none;
+    border-radius: 0.9rem;
+    cursor: pointer;
+    transition: 0.4s;
+    grid-column: 6/9;
+    grid-row: 1/2;
+}
+.Crear-Med:hover{
+    background-color:#850e98 ;
+}
+
+a {
+    color: #eee;
+    text-decoration: none;
+}
+#titulo-2 {
+    grid-column: 1/4;
+    grid-row: 2/3;
+}
+#titulo-3 {
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+.datos-medicos{
+    display: grid;
+    align-items: center;
+    background-color:#707070 ;
+    color: #eee;
+    border: none;
+    border-radius: 0.9rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column: 2/8;
+    grid-row: 4/6;
+}
+.datos{
+    margin: 10px;
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+#da-1{
+    align-self: start;
+}
+#da-2{
+    align-self: center;
+}
+#da-3{
+    align-self: end;
+}
+.Editar-Med {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 43px;
+    font-size: 1.2rem;
+    background-color: #24bdf2;
+    color: #eee;
+    border: none;
+    border-radius: 0.9rem;
+    cursor: pointer;
+    transition: 0.4s;
+    grid-column:4/5;
+    grid-row: 1/2;
+}

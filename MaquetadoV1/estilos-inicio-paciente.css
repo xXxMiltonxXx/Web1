@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
+
+/* selector universal */
+/* reinicio */
+/* se deshace todas las preconfiguraciones */
+*,
+*::before,
+*::after {
+    /* margen y relleno en 0 */
+    padding: 0;
+    margin: 0;
+    /* cambio de tamaño al tamano de la caja */
+    box-sizing: border-box;
+}
+
+body,
+input {
+    font-family: "Poppins", sans-serif;
+}
+.navbar ul {
+    list-style-type: none; /*estilo que tien la lista*/
+    margin: 0; 
+    padding: 0;
+    overflow: hidden;
+    position: fixed; /*posicion fija*/
+    top: 0;
+    left: 0;
+    width: 100%; /*ocupa el 100% de espacio*/
+    background-color: black;
+}
+
+/* estilo para los elementos de la lista no ordenada de la clase navbar */
+.navbar ul li {
+    float: left; /*se agregaran a izquierda en ves de arriba hacia abajo*/
+}
+
+/* estilo para todos los li que tengan como hijo un a */
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+}
+
+/* estilo para cuando se pase por encima el cursor */
+li:hover {
+    background-color: #333;
+}
+
+/* estilo cuando se presione algun li en el navbar */
+.active {
+    background-color: rgb(7, 138, 231);
+}
+
+
+/* estilo de la etiqueta main */
+main {
+    /* ancho al 100% */
+    width: 100%;
+    /* altura minima del dispositivo*/
+    /* es quivalente a usar % */
+    min-height: 100vh;
+    /* desvoradamiento */
+    overflow: hidden;
+    /* color del fondo */
+    background-color: #eee;
+    /* relleno */
+    padding: 2rem;
+    /* se mostrara como flex */
+    display: flex;
+    /* alineacion vertical en el centro */
+    align-items: center;
+    /* alineacion horizontal en el centro */
+    justify-content: center;
+}
+
+/* estilo de la caja */
+.caja {
+    /* posicion relativa */
+    position: relative;
+    /* ancho 100% */
+    width: 100%;
+    /* establecer el ancho maximo */
+    max-width: 940px;
+    /* altura  */
+    height: 720px;
+    /* color de fondo */
+    background-color: #eee;
+}
+
+/* estilo de la caja interna */
+.caja-interna {
+    display: grid;
+    /* posicion del objeto */
+    position: absolute;
+    /* calcular un ancho y alto */
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+    top: 50%;
+    left: 50%;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    /* calculo para que quede centrado  */
+    transform: translate(-50%, -50%);
+}
+
+#titulo-1 {
+    text-align: center;
+    grid-column: 3/7;
+    grid-row: 1/2;
+}
+
+.datos-esenciales {
+    color: #707070;
+}
+
+.Fun-Pac {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 43px;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    background-color: #ED7EFF;
+    color: #eee;
+    border: none;
+    border-radius: 0.9rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+#agendar-cita{
+    grid-column: 3/7;
+    grid-row: 10/11;
+}
+.Fun-Pac:hover{
+    background-color:#850e98 ;
+}
+
+a {
+    color: #eee;
+    text-decoration: none;
+}
+#parrafo-1 {
+    text-align: justify;
+    grid-column: 2/8;
+    grid-row: 2/5;
+}
+#titulo-2 {
+    text-align: center;
+    grid-column: 3/7;
+    grid-row: 6/7;
+}
+#parrafo-2 {
+    font-size: 0.7rem;
+    text-align: left;
+    grid-column: 2/4;
+    grid-row: 7/9;
+}
+#parrafo-3 {
+    font-size: 0.9rem;
+    text-align: justify;
+    grid-column: 6/8;
+    grid-row: 7/9;
+}
